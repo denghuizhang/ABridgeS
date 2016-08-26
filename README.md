@@ -7,6 +7,7 @@ JS¶ËÊ×ÏÈÔÚ¿ò¼ÜµÄextersÎÄ¼ş¼ĞÏÂ¿½±´ABridgeS.jsÕâ¸öÎÄ¼ş£¬²¢ÔÚhtmlÖĞÒıÓÃ¡£Õâ¸öJSÎÄ¼
 <script src="ABridgeS.js"></script>
 ```
 ###Androidµ÷ÓÃJS·½·¨
+
 1.¡¾APP¶Ë¡¿±àĞ´µ÷ÓÃ½Ó¿ÚĞ­ÒéÀà£¬±ÈÈçÒÔÏÂ´úÂë
 ```
 public interface BridgeInterface {
@@ -19,6 +20,7 @@ public interface BridgeInterface {
 BridgeSFunctionCall<T>
 ```
 JS¶Ë±»µ÷ÓÃ·½·¨µÄ·½·¨Ãû±ØĞëÓëĞ­ÒéÖĞµÄ·½·¨ÃûÒ»ÖÂ£¬Èç¹ûĞ­Òé·½·¨ÖĞÓĞ²ÎÊı£¬ÔÚ½»»¥µÄ¹ı³ÌÖĞ£¬ÕâĞ©²ÎÊıÖµ¶¼»á×ª³Éjson×Ö´®£¬²¢´«µİ¸øÔòJS¶Ë¡£Ò²¾ÍÊÇËµ£¬Ğ­Òé·½·¨ÓĞ¼¸¸ö²ÎÊı£¬JS·½·¨¾Í»áÊÕµ½¼¸¸öjson´®¡£Èç¹ûµ÷ÓÃµÄJS·½·¨ÓĞ·µ»ØÖµ£¬ÔòÕâĞ©·µ»ØÖµµÄÀàĞÍ±ØĞëÊÇĞ­Òé·½·¨ÖĞTµÄjson×Ö·û´®¡£Ò²¾ÍÊÇËµ£¬JS·µ»ØÖµÊÇÒ»¸öjson×Ö·û´®£¬²¢ÇÒÄÜ×ª»»ÎªTÕâ¸ö¶ÔÏó¡£¼ÙÈçJSÎŞ·µ»ØÖµ£¬ÔòTÎªVoid£¬²¢ÇÒÕâ¸öVoid±Ø²»¿ÉÉÙ¡£Èç¹ûÏëµÃµ½JS¶Ë´«µİµÄÔ­Ê¼jsonÊı¾İ£¬ÔòTÎªRawResponse¡£
+
 2.¡¾JS¶Ë¡¿±àĞ´±»µ÷ÓÃµÄ·½·¨£¬·½·¨ÃûÒªÓëĞ­ÒéÀà·½·¨ÃûÒ»ÖÂ£¬±ÈÈçÒÔÏÂ´úÂë
 ```
 function getJsUserData() {
@@ -33,6 +35,7 @@ function setUserInfoFromApp(userJson){
     document.getElementById('name_field').value = user.name;
 }
 ```
+
 3.¡¾APP¶Ë¡¿×¢²áĞ­ÒéÀà£¬²¢µ÷ÓÃ½»»¥
 ```
 webView = ...
@@ -63,6 +66,7 @@ AInterface.showToastMessage = function(msg) {
 };
 ```
 **×¢Òâ** ÔÚ¸ÃĞ­ÒéÖĞ£¬ÆäÖĞµÄ·½·¨Ãû×îÖÕÊÇºÍAPP¶Ë½Ó¿Úµ÷ÓÃÀàÖĞµÄ·½·¨ÃûÊÇÒ»ÖÂµÄ£¬Èç¹û½Ó¿Ú·½·¨ĞèÒªAPP¶Ë·µ»ØÖµ£¬ÔòÓ¦¸ÃÊ¹ÓÃ ABridgeS.callWithCallback('±ğÃû', arguments)£¬Èç¹û²»ĞèÒª£¬ÔòÊ¹ÓÃ ABridgeS.call('±ğÃû', arguments)£¬×¢ÒâºÍAPP¶ËÉÌÁ¿ºÃ±ğÃû£¬´Ë±ğÃûÔÚAPP¶Ë×¢²áµ÷ÓÃÀàµÄÊ±ºòÊ¹ÓÃ¡£
+
 2.¡¾APP¶Ë¡¿´´½¨JS½Ó¿Úµ÷ÓÃÀà£¬JS½Ó¿Ú»áÖ±½ÓÇëÇó¸ÃÀàÖĞµÄ´ø**@BridgeMethod** ×¢½âµÄ²¢ÇÒ **Í¬Ãû** µÄ¹«ÓĞ·½·¨¡£
 ```
 public class JSInterfaceObject {
@@ -78,12 +82,14 @@ public class JSInterfaceObject {
     }
 }
 ```
+
 3.¡¾APP¶Ë¡¿×¢²áÉÏÒ»²½´´½¨ºÃµÄJS½Ó¿Úµ÷ÓÃÀà£¬²¢´«Èë¸ÃÀàµÄ±ğÃû£¬±ÈÈçÒÔÏÂ´úÂë
 ```
 webView = ...
 aBridgeS = new ABridgeS.Builder(webView).build();
 aBridgeS.addJsInterface("Android", new JSInterfaceObject(this));
 ```
+
 4.¡¾JS¶Ë¡¿ÔÚJS·½·¨Ö±½ÓÊ¹ÓÃ£¬Èç¹ûÓĞcallbackµÄ£¬JS»Øµ÷·½·¨ÖĞÊÕµ½µÄÊÇAPP¶Ë·µ»ØÖµ¶ÔÏóµÄjson×Ö·û´®¡£
 ```
 function getUserInfo(){
@@ -108,3 +114,13 @@ aBridgeS.onPrepared(new ABridgeSPrepareListener() {
     }
 });
 ```
+
+#License
+Copyright 2016 Zhang.Daniel
+Licensed under the Apache License, Version 2.0 (the "License"); 
+you may not use this file except in compliance with the License. 
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+   
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
