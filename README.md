@@ -1,5 +1,10 @@
 #ABridgeS
 Android Bridge JavaScript ，Android 桥接 JavaScript的一个框架。
+##Compile
+[ ![Download](https://api.bintray.com/packages/denghuizhang/maven/abridges/images/download.svg) ](https://bintray.com/denghuizhang/maven/abridges/_latestVersion)
+```
+compile 'com.github.abridges:abridges:1.0.0'
+```
 ##如何使用
 JS端首先在框架的exters文件夹下拷贝ABridgeS.js这个文件，并在html中引用。这个JS文件作为框架的一部分，在交互中起非常关键的作用。
 ```
